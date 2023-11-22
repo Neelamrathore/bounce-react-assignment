@@ -6,7 +6,14 @@ import router from './routes/countryRoutes.js';
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://bounce-react-assignment-2d8o.vercel.app/"],
+    methods:["POST","GET"],
+    credentials:true
+
+}
+));
 
 app.use('/', router);
 
