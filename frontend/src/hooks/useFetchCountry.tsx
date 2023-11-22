@@ -10,7 +10,8 @@ const useFetchCountry = () => {
  }, []);
   const getCountryInfo = async (countryName: string) => {
     try {
-      const response = await fetch('http://localhost:3001/getCountryInfo', {
+     // const response = await fetch('http://localhost:3001/getCountryInfo', {
+      const response = await fetch('https://bounce-react-assignment.vercel.app/getCountryInfo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
