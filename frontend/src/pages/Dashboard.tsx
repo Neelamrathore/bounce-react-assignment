@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
         </div> */}
         <div>
       <form onSubmit={searchCountry}>
-        <div className="space-y-12 p-2  m-1">
+        <div className="space-y-12 p-2 pt-14  m-1">
           <div className="border-b border-gray-900/10 pb-4">
             <h2 className="text-base font-semibold leading-7 text-gray-900">Search Country</h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">Please use this form to search your own country.</p>
@@ -75,6 +75,7 @@ const Dashboard: React.FC = () => {
       </form>
     </div>
         <div className="container grid grid-cols-4 gap-16 ">
+          
         {countries ? (
               <CountryThumbDetail
               name={countries?.name}

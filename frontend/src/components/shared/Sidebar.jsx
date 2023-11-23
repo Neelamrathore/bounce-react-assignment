@@ -1,7 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link, useLocation } from 'react-router-dom'
-import { FcBullish } from 'react-icons/fc'
 import { HiOutlineLogout } from 'react-icons/hi'
 import { DASHBOARD_SIDEBAR_LINKS, DASHBOARD_SIDEBAR_BOTTOM_LINKS } from '../../constants'
 
@@ -12,7 +11,7 @@ export default function Sidebar() {
 	return (
 		<div className="bg-white w-60 p-3 flex flex-col">
 		
-			<div className="py-8 flex flex-1 flex-col gap-0.5">
+			<div className="py-16 flex flex-1 flex-col gap-0.5">
 				{DASHBOARD_SIDEBAR_LINKS.map((link) => (
 					<SidebarLink key={link.key} link={link} />
 				))}

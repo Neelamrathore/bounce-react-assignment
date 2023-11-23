@@ -1,6 +1,5 @@
 import {
 	HiOutlineViewGrid,
-	HiOutlineCube,
 	HiOutlineQuestionMarkCircle,
 	HiOutlineCog
 } from 'react-icons/hi'
