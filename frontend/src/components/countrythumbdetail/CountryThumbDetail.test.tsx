@@ -3,20 +3,22 @@ import CountryThumbDetail from './CountryThumbDetail';
 
 const mockCountryInfo = {
   name: {
-    common: 'TestCountry',
+    common: 'Ireland',
   },
   population: 1000000,
+  image_url:'https://flagcdn.com/w320/ie.png',
   region: 'Test Region',
   capital: 'Test Capital',
   
 };
-
+const name:any = mockCountryInfo.name.common
 
 describe('CountryThumbDetail Component', () => {
   test('renders CountryThumbDetail component with country details', () => {
     render(
       <CountryThumbDetail
-        name={mockCountryInfo['name']['common']}
+        name={name}
+        image_url={mockCountryInfo.image_url}
         population={mockCountryInfo.population}
         region={mockCountryInfo.region}
         capital={mockCountryInfo.capital}
@@ -26,12 +28,12 @@ describe('CountryThumbDetail Component', () => {
 
     
     expect(screen.getByText('Population:')).toBeInTheDocument();
-    expect(screen.getByText('1000000')).toBeInTheDocument(); // Adjust based on the actual population value
+    expect(screen.getByText('1000000')).toBeInTheDocument(); 
     expect(screen.getByText('Region:')).toBeInTheDocument();
     expect(screen.getByText('Test Region')).toBeInTheDocument();
     expect(screen.getByText('Capital:')).toBeInTheDocument();
     expect(screen.getByText('Test Capital')).toBeInTheDocument();
 
-    // You can add more assertions based on your component's behavior and the expected UI state
+    
   });
 });

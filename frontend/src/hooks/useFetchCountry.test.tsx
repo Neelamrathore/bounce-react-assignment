@@ -17,6 +17,7 @@ describe('useFetchCountry Hook', () => {
 
     // Render the hook
     const { result } = renderHook(() => useFetchCountry());
+    
 
     // Initial state should be undefined
     expect(result.current.countryData).toBeUndefined();
