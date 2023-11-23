@@ -4,14 +4,15 @@ import { CountryInfo } from "../common/Types";
 
 
 const useFetchCountry = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [countryInfo, setCountryInfo] = useState<CountryInfo>();
   useEffect(() => {
     getCountryInfo("ireland");
  }, []);
   const getCountryInfo = async (countryName: string) => {
     try {
-     // const response = await fetch('http://localhost:3001/getCountryInfo', {
-      const response = await fetch('https://bounce-react-assignment.vercel.app/getCountryInfo', {
+     
+      const response = await fetch(`${apiUrl}/getCountryInfo`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

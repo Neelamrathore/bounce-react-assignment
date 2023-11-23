@@ -5,10 +5,10 @@ const mockCountryInfo = {
   name: {
     common: 'Ireland',
   },
-  population: 1000000,
+  population: 4994724,
   image_url:'https://flagcdn.com/w320/ie.png',
-  region: 'Test Region',
-  capital: 'Test Capital',
+  region: 'Europe',
+  capital: 'Dublin',
   
 };
 const name:any = mockCountryInfo.name.common
@@ -28,11 +28,11 @@ describe('CountryThumbDetail Component', () => {
 
     
     expect(screen.getByText('Population:')).toBeInTheDocument();
-    expect(screen.getByText('1000000')).toBeInTheDocument(); 
+    expect(screen.getByText('4994724')).toBeInTheDocument(); 
     expect(screen.getByText('Region:')).toBeInTheDocument();
-    expect(screen.getByText('Test Region')).toBeInTheDocument();
+    expect(screen.getByText('Europe')).toBeInTheDocument();
     expect(screen.getByText('Capital:')).toBeInTheDocument();
-    expect(screen.getByText('Test Capital')).toBeInTheDocument();
+    expect(screen.getByText('Dublin')).toBeInTheDocument();
 
     
   });
