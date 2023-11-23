@@ -11,6 +11,7 @@ const mockCountryInfo = {
   
 };
 
+
 describe('CountryThumbDetail Component', () => {
   test('renders CountryThumbDetail component with country details', () => {
     render(

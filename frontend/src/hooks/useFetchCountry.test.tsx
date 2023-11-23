@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react';
 import useFetchCountry from './useFetchCountry';
 
 describe('useFetchCountry Hook', () => {
@@ -16,7 +16,7 @@ describe('useFetchCountry Hook', () => {
     });
 
     // Render the hook
-    const { result, waitForNextUpdate } = renderHook(() => useFetchCountry());
+    const { result } = renderHook(() => useFetchCountry());
 
     // Initial state should be undefined
     expect(result.current.countryData).toBeUndefined();
@@ -24,7 +24,7 @@ describe('useFetchCountry Hook', () => {
     // Trigger the asynchronous fetch operation
     await act(async () => {
       result.current.getCountryInfo('Ireland');
-      await waitForNextUpdate();
+      
     });
 
     // After the fetch, the state should be updated with the fetched data
