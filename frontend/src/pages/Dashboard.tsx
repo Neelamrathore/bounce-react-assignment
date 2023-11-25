@@ -6,7 +6,7 @@ import CountryThumbDetail from "../components/countrythumbdetail/CountryThumbDet
 
 const Dashboard: React.FC = () => {
   const [country, setCountry] = useState<string>('');
-
+  const [error, setError] = useState<string>('');
   const [countries, setCountries] = useState<CountryInfo>()
   const { getCountryInfo, countryData } = useFetchCountry();
   useEffect(() => {
@@ -16,13 +16,17 @@ const Dashboard: React.FC = () => {
   }, [countryData])
   const searchCountry = async (event: any) => {
     event.preventDefault();
-    if (country.length < 3 || country === '') return
+    if (country.length < 3 || country === '') {
+      setError('Please enter at least 3 characters.');
+      return}
 
     try {
+      setError(''); // Clear any previous error
       await getCountryInfo(country);
       await setCountries(countryData)
     } catch (error) {
       console.error('Error fetching data:', error);
+      setError('Error fetching data:'); 
     }
 
 
@@ -43,7 +47,9 @@ const Dashboard: React.FC = () => {
                 <label htmlFor="Portfolio-name" className="block text-sm font-medium leading-6 text-gray-900">Country name</label>
                 <div className="mt-2">
                   <input type="text" value={country} onChange={(e: ChangeEvent<HTMLInputElement>) => setCountry(e.target.value)} placeholder="Search for a country..." className="pl-10 p-2 shadow-md rounded-md w-1/3 dark:bg-gray-700" />
-
+                  {error && (
+            <p className="mt-2 text-sm text-red-500">{error}</p>
+          )}
 
                 </div>
               </div>
